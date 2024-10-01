@@ -1,27 +1,45 @@
-import './App.css';
+import React, { useState } from "react";
+
+function WeatherDashboard() {
+  // Mock weather data
+  const mockWeatherData = {
+    "New York": {
+      temperature: "22°C",
+      humidity: "56%",
+      windSpeed: "15 km/h",
+    },
+    "Los Angeles": {
+      temperature: "27°C",
+      humidity: "45%",
+      windSpeed: "10 km/h",
+    },
+    London: {
+      temperature: "15°C",
+      humidity: "70%",
+      windSpeed: "20 km/h",
+    },
+  };
+
+  return (
+    <div>
+      <input type="text" id="citySearch" placeholder="Search for a city..." />
+      <button id="searchButton">Search</button>
+      <div id="weatherData">
+        <div>Temperature: </div>
+        <div>Humidity: </div>
+        <div>Wind Speed: </div>
+        <div>City not found.</div>
+      </div>
+      <div id="previousSearches"></div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    <div>
+      <h1>Weather Dashboard</h1>
+      <WeatherDashboard />
     </div>
   );
 }
